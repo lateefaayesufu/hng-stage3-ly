@@ -4,7 +4,7 @@ import Image from "next/image"
 import React from "react"
 import ButtonOne from "../components/Buttons/ButtonOne"
 import CategoryCards from "@/components/CategoryCards/CategoryCards"
-import AboutSection from "../components/AboutSection/AboutSection"
+import AboutSection from "@/components/AboutSection/AboutSection"
 import { motion } from "framer-motion"
 
 export default function Page() {
@@ -71,26 +71,40 @@ export default function Page() {
       {/* FEATURED PRODUCTS SECTION */}
       <section className="lg:pt-[168px] md:pt-[96px] sm:pt-[120px] flex flex-col w-[100%] lg:max-w-[1110px] md:max-w-[689px] sm:max-w-[327px] m-auto sm:justify-center gap-y-8 sm:gap-y-6">
         {/* ZX9 Speaker */}
-        <div className="flex lg:flex-row md:flex-col sm:flex-col w-full lg:justify-end md:justify-start sm:justify-start items-center sm:items-center sm:text-center rounded-md bg-dark-salmon lg:h-[560px] md:h-[720px] sm:h-[600px] relative">
-          <Image
-            src="/home/desktop/image-speaker-zx9.png"
-            alt="ZX9 Speaker"
-            width={360}
-            height={417}
-            className="z-10 lg:absolute md:block left-[13%] bottom-0 lg:my-0 md:my-14 sm:my-14"
-          />
-          <div className="z-10 relative lg:w-1/3 md:w-1/2 sm:w-[80%] lg:text-left md:text-center flex flex-col gap-y-7">
-            <h1 className="text-white sm:px-4">ZX9 SPEAKER</h1>
-            <p className="text-white">
-              Upgrade to premium speakers that are phenomenally built to deliver
-              truly remarkable sound.
-            </p>
-            <ButtonOne
-              link={"category/speakers/zx9-speaker"}
-              color={"bg-black text-white hover:bg-[#4C4C4C]"}
-            />
-          </div>
-        </div>
+        <div className="flex lg:flex-row md:flex-col sm:flex-col w-full lg:justify-end md:justify-start sm:justify-start items-center sm:items-center sm:text-center rounded-md bg-dark-salmon lg:h-[560px] md:h-[720px] sm:h-[600px] relative overflow-hidden">
+  {/* Background Pattern */}
+  <Image
+    src="/home/desktop/pattern-circles-desktop.svg"
+    alt="Background pattern"
+    width={944} 
+    height={944}
+    className="absolute top-[50px] left-[50px] z-0"
+    priority
+  />
+
+  {/* Speaker Image */}
+  <Image
+    src="/home/desktop/image-speaker-zx9.png"
+    alt="ZX9 Speaker"
+    width={360}
+    height={417}
+    className="z-10 lg:absolute md:block left-[13%] bottom-0 lg:my-0 md:my-14 sm:my-14"
+  />
+
+  {/* Content */}
+  <div className="z-10 relative lg:w-1/3 md:w-1/2 sm:w-[80%] lg:text-left md:text-center flex flex-col gap-y-7">
+    <h1 className="text-white sm:px-4">ZX9 SPEAKER</h1>
+    <p className="text-white">
+      Upgrade to premium speakers that are phenomenally built to deliver
+      truly remarkable sound.
+    </p>
+    <ButtonOne
+      link={"category/speakers/zx9-speaker"}
+      color={"bg-black text-white hover:bg-[#4C4C4C]"}
+    />
+  </div>
+</div>
+
 
         {/* ZX7 Speaker */}
         <div className="flex flex-row w-full justify-start items-center rounded-md h-[320px] sm:h-[320px] relative">
