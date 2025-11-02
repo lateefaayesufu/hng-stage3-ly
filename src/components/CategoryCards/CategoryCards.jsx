@@ -1,26 +1,23 @@
 "use client"
 
-import React, { useRef, useState } from "react"
-import headphone from "public/shared/desktop/image-category-thumbnail-headphones.png"
-import speaker from "public/shared/desktop/image-category-thumbnail-speakers.png"
-import earphone from "public/shared/desktop/image-category-thumbnail-earphones.png"
+import React from "react"
 import CategoryCard from "./CategoryCard/CategoryCard"
 
 export default function CategoryCards() {
   return (
-    <div className="w-[100%] lg:max-w-[1110px] md:max-w-[689px] sm:max-w-[327px] flex flex-row sm:flex-col justify-between m-auto flex-wrap sm:h-[683px]">
+    <div className="w-full lg:max-w-[1110px] md:max-w-[689px] sm:max-w-[327px] flex flex-row sm:flex-col justify-between m-auto flex-wrap sm:h-[683px]">
       <CategoryCard
-        image={headphone}
+        image="/shared/desktop/image-category-thumbnail-headphones.png"
         link="/category/headphones"
         category="Headphones"
       />
       <CategoryCard
-        image={speaker}
+        image="/shared/desktop/image-category-thumbnail-speakers.png"
         link="/category/speakers"
         category="Speakers"
       />
       <CategoryCard
-        image={earphone}
+        image="/shared/desktop/image-category-thumbnail-earphones.png"
         link="/category/earphones"
         category="Earphones"
       />
