@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --form-control-color: #d87d4a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+h1 {
+  font-size: 56px;
+  text-transform: uppercase;
+  line-height: 58px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: 1.43px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1.14px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 1.14px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+h6 {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+p {
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+pre {
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+.overline-text {
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sub-title {
+  font-size: 13px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .container-one-desktop {
+    background-image: url("../../public/home/tablet/pattern-circles.svg");
+    background-repeat: no-repeat;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 24px;
+  }
+
+  .overline-text {
+    font-size: 12px;
+  }
+
+  .item-0 {
+    flex-direction: column;
+  }
+
+  .item-1 {
+    flex-direction: column;
+  }
+
+  .item-2 {
+    flex-direction: column;
+  }
+
+  .modalContent {
+    left: 45vw;
+    width: 377px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .item-0 {
+    flex-direction: row;
+  }
+
+  .item-1 {
+    flex-direction: row-reverse;
+  }
+
+  .item-2 {
+    flex-direction: row;
+  }
+  .container-one-desktop {
+    background-image: url("../../public/home/desktop/pattern-circles-desktop.svg");
+    background-repeat: no-repeat;
+  }
+
+  .modalContent {
+    left: 62vw;
+    width: 377px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  /* body {
+    overflow: hidden;
+  } */
+  h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  h6 {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .container-one-desktop {
+    background-image: url("../../public/home/mobile/pattern-circles.svg");
+    background-repeat: no-repeat;
+  }
+
+  .m-dropdown-cards div {
+    max-height: 180px;
+    row-gap: 2px;
+  }
+
+  /* Mobile dropdown cards */
+
+  .m-dropdown-cards img {
+    height: 150px;
+  }
+
+  .modalContent {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 325px;
+  }
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  left: 64vw;
+  position: "fixed";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: "20";
+  cursor: "pointer";
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  left: 64vw;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  left: 64vw;
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: #cfcfcf;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.fb-icon {
+  background-color: white;
+  -webkit-mask: url("../../public/shared/desktop/icon-facebook.svg") no-repeat
+    center;
+  mask: url("../../public/shared/desktop/icon-facebook.svg") no-repeat center;
+}
+
+.fb-icon:hover {
+  background-color: #d87d4a;
+  -webkit-mask: url("../../public/shared/desktop/icon-facebook.svg") no-repeat
+    center;
+  mask: url("../../public/shared/desktop/icon-facebook.svg") no-repeat center;
+}
+
+.twitter-icon {
+  background-color: white;
+  -webkit-mask: url("../../public/shared/desktop/icon-twitter.svg") no-repeat
+    center;
+  mask: url("../../public/shared/desktop/icon-twitter.svg") no-repeat center;
+}
+
+.twitter-icon:hover {
+  background-color: #d87d4a;
+  -webkit-mask: url("../../public/shared/desktop/icon-twitter.svg") no-repeat
+    center;
+  mask: url("../../public/shared/desktop/icon-twitter.svg") no-repeat center;
+}
+
+.insta-icon {
+  background-color: white;
+  -webkit-mask: url("../../public/shared/desktop/icon-instagram.svg") no-repeat
+    center;
+  mask: url("../../public/shared/desktop/icon-instagram.svg") no-repeat center;
+}
+
+.insta-icon:hover {
+  background-color: #d87d4a;
+  -webkit-mask: url("../../public/shared/desktop/icon-instagram.svg") no-repeat
+    center;
+  mask: url("../../public/shared/desktop/icon-instagram.svg") no-repeat center;
+}
