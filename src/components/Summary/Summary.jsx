@@ -1,10 +1,18 @@
+"use client"
 import Image from "next/image"
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { CartContext } from "@/context/CartContext"
 import { motion } from "framer-motion"
 
 export default function Summary() {
   const { cart, totalPriceCalc } = useContext(CartContext)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
 
   const cartTotal = totalPriceCalc()
 
@@ -13,7 +21,7 @@ export default function Summary() {
       <div className="flex justify-between">
         <h6>Summary</h6>
       </div>
-      {cart.length != 0 ? (
+      {cart.length !== 0 ? (
         cart.map((item) => (
           <div
             key={item.id}
@@ -49,7 +57,7 @@ export default function Summary() {
         </div>
         <div className="flex justify-between">
           <p className="uppercase text-black/50">Shipping</p>
-          <h6>${cartTotal != 0 ? "50" : "0"}</h6>
+          <h6>${cartTotal !== 0 ? "50" : "0"}</h6>
         </div>
         <div className="flex justify-between">
           <p className="uppercase text-black/50">VAT (Included)</p>
@@ -58,7 +66,7 @@ export default function Summary() {
         <div className="flex justify-between mt-4">
           <p className="uppercase text-black/50">Grand Total</p>
           <h6 className="text-dark-salmon">
-            ${cartTotal != 0 ? (cartTotal + 50).toLocaleString() : "0"}
+            ${cartTotal !== 0 ? (cartTotal + 50).toLocaleString() : "0"}
           </h6>
         </div>
       </div>
@@ -66,7 +74,7 @@ export default function Summary() {
         className="mt-8 bg-dark-salmon text-white font-bold uppercase w-full h-[48px] text-[13px] tracking-[1px] disabled:opacity-50 hover:bg-salmon"
         form="checkout-form"
         type="submit"
-        disabled={cart.length == 0}
+        disabled={cart.length === 0}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >

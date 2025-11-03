@@ -32,10 +32,10 @@ export default defineSchema({
     grandTotal: v.number(),
 
     // Payment method
-    paymentMethod: v.string(), // "cash" or "e-money"
+    paymentMethod: v.string(),
 
     // Status
-    orderStatus: v.string(), // "pending", "confirmed", "shipped", "delivered"
+    orderStatus: v.string(),
 
     // Timestamps
     createdAt: v.number(),
