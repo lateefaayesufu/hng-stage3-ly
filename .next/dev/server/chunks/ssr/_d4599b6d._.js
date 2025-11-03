@@ -290,11 +290,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 const ThankYouModal = ({ showModal, modelState })=>{
     const [seeMore, setSeeMore] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const { cart, totalPriceCalc } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$CartContext$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CartContext"]);
-    // use snapshot of total before cart clears
     const cartTotal = totalPriceCalc();
-    if (!showModal) return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$modal$2f$lib$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
         ariaHideApp: false,
+        isOpen: showModal,
+        onRequestClose: modelState,
         style: {
             overlay: {
                 position: "fixed",
@@ -302,8 +302,8 @@ const ThankYouModal = ({ showModal, modelState })=>{
                 left: 0,
                 right: 0,
                 bottom: 0,
-                backgroundColor: "rgba(0, 0, 0, 0.75)",
-                zIndex: "20"
+                backgroundColor: "rgba(0,0,0,0.75)",
+                zIndex: 20
             },
             content: {
                 position: "absolute",
@@ -321,8 +321,6 @@ const ThankYouModal = ({ showModal, modelState })=>{
                 padding: "24px"
             }
         },
-        isOpen: showModal,
-        onRequestClose: modelState,
         contentLabel: "Thank You Modal",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "flex flex-col gap-y-6",
@@ -342,7 +340,7 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                 fill: "#D87D4A"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                lineNumber: 61,
+                                lineNumber: 58,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -351,18 +349,18 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                 strokeWidth: "4"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                lineNumber: 62,
+                                lineNumber: 59,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                        lineNumber: 54,
+                        lineNumber: 51,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                    lineNumber: 53,
+                    lineNumber: 50,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -372,14 +370,14 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                 "Thank you",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                    lineNumber: 73,
+                                    lineNumber: 70,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 "for your order"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                            lineNumber: 71,
+                            lineNumber: 68,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -387,13 +385,13 @@ const ThankYouModal = ({ showModal, modelState })=>{
                             children: "You will receive an email confirmation shortly."
                         }, void 0, false, {
                             fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                            lineNumber: 76,
+                            lineNumber: 73,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                    lineNumber: 70,
+                    lineNumber: 67,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 cart.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -417,12 +415,12 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                                     className: "object-cover m-auto pt-[5px]"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                    lineNumber: 88,
+                                                    lineNumber: 85,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                lineNumber: 87,
+                                                lineNumber: 84,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -433,7 +431,7 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                                         children: cart[0].name.split(" ")[0]
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                        lineNumber: 97,
+                                                        lineNumber: 94,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -444,13 +442,13 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                        lineNumber: 100,
+                                                        lineNumber: 97,
                                                         columnNumber: 23
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                lineNumber: 96,
+                                                lineNumber: 93,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -461,13 +459,13 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                lineNumber: 104,
+                                                lineNumber: 101,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                        lineNumber: 86,
+                                        lineNumber: 83,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)) : cart.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "flex justify-between w-full",
@@ -482,12 +480,12 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                                         className: "object-cover m-auto pt-[5px]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                        lineNumber: 112,
+                                                        lineNumber: 109,
                                                         columnNumber: 25
                                                     }, ("TURBOPACK compile-time value", void 0))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                    lineNumber: 111,
+                                                    lineNumber: 108,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -498,7 +496,7 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                                             children: item.name.split(" ")[0]
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                            lineNumber: 121,
+                                                            lineNumber: 118,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0)),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -509,13 +507,13 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                            lineNumber: 124,
+                                                            lineNumber: 121,
                                                             columnNumber: 25
                                                         }, ("TURBOPACK compile-time value", void 0))
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                    lineNumber: 120,
+                                                    lineNumber: 117,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -526,18 +524,18 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                                    lineNumber: 128,
+                                                    lineNumber: 125,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, item.id, true, {
                                             fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                            lineNumber: 110,
+                                            lineNumber: 107,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                    lineNumber: 84,
+                                    lineNumber: 81,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -548,18 +546,18 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                         children: !seeMore ? `and ${cart.length - 1} other item(s)` : "View less"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                        lineNumber: 137,
+                                        lineNumber: 134,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                    lineNumber: 135,
+                                    lineNumber: 132,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                            lineNumber: 83,
+                            lineNumber: 80,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -570,7 +568,7 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                     children: "Grand Total"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                    lineNumber: 150,
+                                    lineNumber: 147,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -581,19 +579,19 @@ const ThankYouModal = ({ showModal, modelState })=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                                    lineNumber: 153,
+                                    lineNumber: 150,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                            lineNumber: 149,
+                            lineNumber: 146,
                             columnNumber: 13
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                    lineNumber: 82,
+                    lineNumber: 79,
                     columnNumber: 11
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -610,23 +608,23 @@ const ThankYouModal = ({ showModal, modelState })=>{
                         children: "Back to home"
                     }, void 0, false, {
                         fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                        lineNumber: 161,
+                        lineNumber: 158,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 }, void 0, false, {
                     fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-                    lineNumber: 160,
+                    lineNumber: 157,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-            lineNumber: 52,
+            lineNumber: 49,
             columnNumber: 7
         }, ("TURBOPACK compile-time value", void 0))
     }, void 0, false, {
         fileName: "[project]/src/components/Modal/ThankYouModal.jsx",
-        lineNumber: 20,
+        lineNumber: 17,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
@@ -742,11 +740,11 @@ function Form() {
                 paymentMethod: values.payment
             };
             try {
-                console.log("Step 1: creating order...");
+                console.log("Step 1: Creating order in Convex...");
                 const orderId = await createOrderMutation(orderData);
-                console.log("Step 2: order created", orderId);
-                console.log("Step 3: sending email...");
-                await fetch("/api/sendConfirmation", {
+                console.log("Step 2: Order created:", orderId);
+                console.log("Step 3: Sending confirmation email...");
+                const res = await fetch("/api/sendConfirmation", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
@@ -761,383 +759,329 @@ function Form() {
                         total: orderData.grandTotal
                     })
                 });
-                console.log("Step 4: clearing cart + showing modal");
+                const emailResponse = await res.json();
+                console.log("Email response:", emailResponse);
+                if (!res.ok) throw new Error(emailResponse.error || "Email failed");
+                console.log("Step 4: Clearing cart + showing modal");
                 clearCart();
                 setShowModal(true);
-                document.body.style.overflow = "hidden";
             } catch (err) {
                 console.error("Order submission failed:", err);
-                alert("Something went wrong. Please try again.");
+                alert("Something went wrong. Check console.");
             } finally{
                 setSubmitting(false);
             }
         }
     });
-    const modalShow = ()=>{
+    const handleModalClose = ()=>{
         setShowModal(false);
         router.push("/order-confirmation");
     };
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-        id: "checkout-form",
-        onSubmit: (e)=>{
-            e.preventDefault(); // prevent reload
-            formik.handleSubmit();
-        },
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
-            showModal && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Modal$2f$ThankYouModal$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                showModal: showModal,
-                modelState: modalShow
-            }, void 0, false, {
-                fileName: "[project]/src/components/Form/Form.jsx",
-                lineNumber: 121,
-                columnNumber: 9
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "pb-[53px]",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                id: "checkout-form",
+                onSubmit: (e)=>{
+                    e.preventDefault();
+                    console.log("Form submit clicked");
+                    formik.handleSubmit();
+                },
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "sub-title text-dark-salmon pb-3",
-                        children: "Billing Details"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Form/Form.jsx",
-                        lineNumber: 126,
-                        columnNumber: 9
-                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-wrap w-full justify-between gap-y-6",
+                        className: "pb-[53px]",
                         children: [
-                            {
-                                label: "Name",
-                                name: "name",
-                                type: "text",
-                                placeholder: "Your Name"
-                            },
-                            {
-                                label: "Email Address",
-                                name: "email",
-                                type: "email",
-                                placeholder: "Your Email"
-                            },
-                            {
-                                label: "Phone Number",
-                                name: "phone",
-                                type: "text",
-                                placeholder: "Your Phone Number"
-                            }
-                        ].map((field)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-[309px]",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: `text-xs font-bold block mb-2 ${formik.touched[field.name] && formik.errors[field.name] ? "text-red-700" : "text-black"}`,
-                                        children: [
-                                            field.label,
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-xs text-red-700",
-                                                children: formik.touched[field.name] && formik.errors[field.name]
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Form/Form.jsx",
-                                                lineNumber: 157,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 149,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        ...field,
-                                        onChange: formik.handleChange,
-                                        onBlur: formik.handleBlur,
-                                        value: formik.values[field.name],
-                                        className: `block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${formik.touched[field.name] && formik.errors[field.name] ? "border-red-700 border-2" : "border-grey border"}`
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 161,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, field.name, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "sub-title text-dark-salmon pb-3",
+                                children: "Billing Details"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/Form/Form.jsx",
-                                lineNumber: 148,
-                                columnNumber: 13
-                            }, this))
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Form/Form.jsx",
-                        lineNumber: 127,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/Form/Form.jsx",
-                lineNumber: 125,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "pb-[53px]",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "sub-title text-dark-salmon pb-3",
-                        children: "Shipping Info"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Form/Form.jsx",
-                        lineNumber: 179,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-wrap w-full justify-between gap-y-6",
-                        children: [
-                            {
-                                label: "Address",
-                                name: "address",
-                                placeholder: "1137 Williams Avenue",
-                                full: true
-                            },
-                            {
-                                label: "ZIP Code",
-                                name: "zip",
-                                placeholder: "10001"
-                            },
-                            {
-                                label: "City",
-                                name: "city",
-                                placeholder: "New York"
-                            },
-                            {
-                                label: "Country",
-                                name: "country",
-                                placeholder: "United States"
-                            }
-                        ].map((field)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: field.full ? "w-full" : "w-[309px]",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: `text-xs font-bold block mb-2 ${formik.touched[field.name] && formik.errors[field.name] ? "text-red-700" : "text-black"}`,
-                                        children: [
-                                            field.label,
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-xs text-red-700",
-                                                children: formik.touched[field.name] && formik.errors[field.name]
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Form/Form.jsx",
-                                                lineNumber: 204,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 196,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        name: field.name,
-                                        type: "text",
-                                        placeholder: field.placeholder,
-                                        onChange: formik.handleChange,
-                                        onBlur: formik.handleBlur,
-                                        value: formik.values[field.name],
-                                        className: `block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${formik.touched[field.name] && formik.errors[field.name] ? "border-red-700 border-2" : "border-grey border"}`
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 208,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, field.name, true, {
-                                fileName: "[project]/src/components/Form/Form.jsx",
-                                lineNumber: 192,
-                                columnNumber: 13
-                            }, this))
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Form/Form.jsx",
-                        lineNumber: 180,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/Form/Form.jsx",
-                lineNumber: 178,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "pb-[53px] sm:w-full",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "sub-title text-dark-salmon pb-3",
-                        children: "Payment Details"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/Form/Form.jsx",
-                        lineNumber: 228,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex w-full h-[128px] mb-5 sm:flex-col",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex-1",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: `text-xs font-bold ${formik.touched.payment && formik.errors.payment ? "text-red-700" : "text-black"}`,
-                                        children: "Payment Method"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 231,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "mt-2 text-xs text-red-700",
-                                        children: formik.touched.payment && formik.errors.payment
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 240,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/Form/Form.jsx",
-                                lineNumber: 230,
+                                lineNumber: 128,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex-1",
+                                className: "flex flex-wrap w-full justify-between gap-y-6",
                                 children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: "text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon",
+                                    {
+                                        label: "Name",
+                                        name: "name",
+                                        type: "text",
+                                        placeholder: "Your Name"
+                                    },
+                                    {
+                                        label: "Email Address",
+                                        name: "email",
+                                        type: "email",
+                                        placeholder: "Your Email"
+                                    },
+                                    {
+                                        label: "Phone Number",
+                                        name: "phone",
+                                        type: "text",
+                                        placeholder: "Your Phone Number"
+                                    }
+                                ].map((field)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-[309px]",
                                         children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                className: `text-xs font-bold block mb-2 ${formik.touched[field.name] && formik.errors[field.name] ? "text-red-700" : "text-black"}`,
+                                                children: [
+                                                    field.label,
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-xs text-red-700",
+                                                        children: formik.touched[field.name] && formik.errors[field.name]
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Form/Form.jsx",
+                                                        lineNumber: 159,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/Form/Form.jsx",
+                                                lineNumber: 151,
+                                                columnNumber: 17
+                                            }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                name: "payment",
-                                                value: "eMoney",
-                                                type: "radio",
-                                                onChange: formik.handleChange
+                                                ...field,
+                                                onChange: formik.handleChange,
+                                                onBlur: formik.handleBlur,
+                                                value: formik.values[field.name],
+                                                className: `block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${formik.touched[field.name] && formik.errors[field.name] ? "border-red-700 border-2" : "border-grey border"}`
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Form/Form.jsx",
+                                                lineNumber: 163,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, field.name, true, {
+                                        fileName: "[project]/src/components/Form/Form.jsx",
+                                        lineNumber: 150,
+                                        columnNumber: 15
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Form/Form.jsx",
+                                lineNumber: 129,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/Form/Form.jsx",
+                        lineNumber: 127,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "pb-[53px]",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "sub-title text-dark-salmon pb-3",
+                                children: "Shipping Info"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Form/Form.jsx",
+                                lineNumber: 181,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex flex-wrap w-full justify-between gap-y-6",
+                                children: [
+                                    {
+                                        label: "Address",
+                                        name: "address",
+                                        placeholder: "1137 Williams Avenue",
+                                        full: true
+                                    },
+                                    {
+                                        label: "ZIP Code",
+                                        name: "zip",
+                                        placeholder: "10001"
+                                    },
+                                    {
+                                        label: "City",
+                                        name: "city",
+                                        placeholder: "New York"
+                                    },
+                                    {
+                                        label: "Country",
+                                        name: "country",
+                                        placeholder: "United States"
+                                    }
+                                ].map((field)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: field.full ? "w-full" : "w-[309px]",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                className: `text-xs font-bold block mb-2 ${formik.touched[field.name] && formik.errors[field.name] ? "text-red-700" : "text-black"}`,
+                                                children: [
+                                                    field.label,
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        className: "text-xs text-red-700",
+                                                        children: formik.touched[field.name] && formik.errors[field.name]
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Form/Form.jsx",
+                                                        lineNumber: 210,
+                                                        columnNumber: 19
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/Form/Form.jsx",
+                                                lineNumber: 202,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                name: field.name,
+                                                type: "text",
+                                                placeholder: field.placeholder,
+                                                onChange: formik.handleChange,
+                                                onBlur: formik.handleBlur,
+                                                value: formik.values[field.name],
+                                                className: `block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${formik.touched[field.name] && formik.errors[field.name] ? "border-red-700 border-2" : "border-grey border"}`
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Form/Form.jsx",
+                                                lineNumber: 214,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, field.name, true, {
+                                        fileName: "[project]/src/components/Form/Form.jsx",
+                                        lineNumber: 198,
+                                        columnNumber: 15
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Form/Form.jsx",
+                                lineNumber: 182,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/Form/Form.jsx",
+                        lineNumber: 180,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "pb-[53px] sm:w-full",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "sub-title text-dark-salmon pb-3",
+                                children: "Payment Details"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Form/Form.jsx",
+                                lineNumber: 234,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex w-full h-[128px] mb-5 sm:flex-col",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex-1",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: `text-xs font-bold ${formik.touched.payment && formik.errors.payment ? "text-red-700" : "text-black"}`,
+                                                children: "Payment Method"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Form/Form.jsx",
+                                                lineNumber: 237,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "mt-2 text-xs text-red-700",
+                                                children: formik.touched.payment && formik.errors.payment
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Form/Form.jsx",
                                                 lineNumber: 246,
                                                 columnNumber: 15
-                                            }, this),
-                                            " ",
-                                            "e-Money"
+                                            }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 245,
+                                        lineNumber: 236,
                                         columnNumber: 13
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: "text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex-1",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                name: "payment",
-                                                value: "cod",
-                                                type: "radio",
-                                                onChange: formik.handleChange
-                                            }, void 0, false, {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                className: "text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        name: "payment",
+                                                        value: "eMoney",
+                                                        type: "radio",
+                                                        onChange: formik.handleChange
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Form/Form.jsx",
+                                                        lineNumber: 252,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    " ",
+                                                    "e-Money"
+                                                ]
+                                            }, void 0, true, {
                                                 fileName: "[project]/src/components/Form/Form.jsx",
-                                                lineNumber: 255,
+                                                lineNumber: 251,
                                                 columnNumber: 15
                                             }, this),
-                                            " ",
-                                            "Cash on Delivery"
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                                className: "text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        name: "payment",
+                                                        value: "cod",
+                                                        type: "radio",
+                                                        onChange: formik.handleChange
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/components/Form/Form.jsx",
+                                                        lineNumber: 261,
+                                                        columnNumber: 17
+                                                    }, this),
+                                                    " ",
+                                                    "Cash on Delivery"
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/components/Form/Form.jsx",
+                                                lineNumber: 260,
+                                                columnNumber: 15
+                                            }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 254,
+                                        lineNumber: 250,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Form/Form.jsx",
-                                lineNumber: 244,
+                                lineNumber: 235,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Form/Form.jsx",
-                        lineNumber: 229,
+                        lineNumber: 233,
                         columnNumber: 9
                     }, this),
-                    formik.values.payment === "eMoney" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-wrap sm:pt-8 w-full justify-between gap-y-6",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-[309px]",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: "text-xs font-bold block mb-2",
-                                        children: "e-Money Number"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 269,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        className: "block rounded-md border w-full h-[56px] border-grey text-black font-bold text-[14px] px-[24px]",
-                                        placeholder: "238521993",
-                                        type: "text"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 272,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/Form/Form.jsx",
-                                lineNumber: 268,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-[309px]",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: "text-xs font-bold block mb-2",
-                                        children: "e-Money PIN"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 279,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                        className: "block rounded-md border w-full h-[56px] border-grey text-black font-bold text-[14px] px-[24px]",
-                                        placeholder: "6891",
-                                        type: "text"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/Form/Form.jsx",
-                                        lineNumber: 282,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/Form/Form.jsx",
-                                lineNumber: 278,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        type: "submit",
+                        disabled: submitting,
+                        className: "bg-dark-salmon text-white py-3 px-6 rounded-md font-bold",
+                        children: submitting ? "Processing..." : "Confirm Order"
+                    }, void 0, false, {
                         fileName: "[project]/src/components/Form/Form.jsx",
-                        lineNumber: 267,
-                        columnNumber: 11
+                        lineNumber: 273,
+                        columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Form/Form.jsx",
-                lineNumber: 227,
+                lineNumber: 118,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                type: "submit",
-                disabled: submitting,
-                className: "bg-dark-salmon text-white py-3 px-6 rounded-md font-bold",
-                children: submitting ? "Processing..." : "Confirm Order"
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Modal$2f$ThankYouModal$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                showModal: showModal,
+                modelState: handleModalClose
             }, void 0, false, {
                 fileName: "[project]/src/components/Form/Form.jsx",
-                lineNumber: 292,
+                lineNumber: 283,
                 columnNumber: 7
             }, this)
         ]
-    }, void 0, true, {
-        fileName: "[project]/src/components/Form/Form.jsx",
-        lineNumber: 113,
-        columnNumber: 5
-    }, this);
+    }, void 0, true);
 }
 }),
 "[project]/src/app/checkout/page.jsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {

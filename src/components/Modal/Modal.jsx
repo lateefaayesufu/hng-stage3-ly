@@ -39,7 +39,7 @@ const CartModal = ({ showModal, modelState }) => {
         onRequestClose={!showModal}
         contentLabel="Cart"
         id="modal"
-        onRequestClose={() => modelState()}
+        onRequestClose2={() => modelState()}
         shouldCloseOnOverlayClick={true}
         className={"modalContent"}
       >

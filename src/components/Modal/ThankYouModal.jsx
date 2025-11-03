@@ -11,14 +11,13 @@ const ThankYouModal = ({ showModal, modelState }) => {
   const [seeMore, setSeeMore] = useState(false)
   const { cart, totalPriceCalc } = useContext(CartContext)
 
-  // use snapshot of total before cart clears
   const cartTotal = totalPriceCalc()
-
-  if (!showModal) return null
 
   return (
     <Modal
       ariaHideApp={false}
+      isOpen={showModal}
+      onRequestClose={modelState}
       style={{
         overlay: {
           position: "fixed",
@@ -26,8 +25,8 @@ const ThankYouModal = ({ showModal, modelState }) => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.75)",
-          zIndex: "20",
+          backgroundColor: "rgba(0,0,0,0.75)",
+          zIndex: 20,
         },
         content: {
           position: "absolute",
@@ -45,8 +44,6 @@ const ThankYouModal = ({ showModal, modelState }) => {
           padding: "24px",
         },
       }}
-      isOpen={showModal}
-      onRequestClose={modelState}
       contentLabel="Thank You Modal"
     >
       <div className="flex flex-col gap-y-6">

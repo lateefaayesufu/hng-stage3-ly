@@ -75,12 +75,12 @@ export default function Form() {
       }
 
       try {
-        console.log("Step 1: creating order...")
+        console.log("Step 1: Creating order in Convex...")
         const orderId = await createOrderMutation(orderData)
-        console.log("Step 2: order created", orderId)
+        console.log("Step 2: Order created:", orderId)
 
-        console.log("Step 3: sending email...")
-        await fetch("/api/sendConfirmation", {
+        console.log("Step 3: Sending confirmation email...")
+        const res = await fetch("/api/sendConfirmation", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -91,211 +91,196 @@ export default function Form() {
           }),
         })
 
-        console.log("Step 4: clearing cart + showing modal")
+        const emailResponse = await res.json()
+        console.log("Email response:", emailResponse)
+
+        if (!res.ok) throw new Error(emailResponse.error || "Email failed")
+
+        console.log("Step 4: Clearing cart + showing modal")
         clearCart()
         setShowModal(true)
-        document.body.style.overflow = "hidden"
       } catch (err) {
         console.error("Order submission failed:", err)
-        alert("Something went wrong. Please try again.")
+        alert("Something went wrong. Check console.")
       } finally {
         setSubmitting(false)
       }
     },
   })
 
-  const modalShow = () => {
+  const handleModalClose = () => {
     setShowModal(false)
     router.push("/order-confirmation")
   }
 
   return (
-    <form
-      id="checkout-form"
-      onSubmit={(e) => {
-        e.preventDefault() // prevent reload
-        formik.handleSubmit()
-      }}
-    >
-      {showModal && (
-        <ThankYouModal showModal={showModal} modelState={modalShow} />
-      )}
-
-      {/* BILLING DETAILS */}
-      <div className="pb-[53px]">
-        <p className="sub-title text-dark-salmon pb-3">Billing Details</p>
-        <div className="flex flex-wrap w-full justify-between gap-y-6">
-          {[
-            {
-              label: "Name",
-              name: "name",
-              type: "text",
-              placeholder: "Your Name",
-            },
-            {
-              label: "Email Address",
-              name: "email",
-              type: "email",
-              placeholder: "Your Email",
-            },
-            {
-              label: "Phone Number",
-              name: "phone",
-              type: "text",
-              placeholder: "Your Phone Number",
-            },
-          ].map((field) => (
-            <div key={field.name} className="w-[309px]">
-              <label
-                className={`text-xs font-bold block mb-2 ${
-                  formik.touched[field.name] && formik.errors[field.name]
-                    ? "text-red-700"
-                    : "text-black"
-                }`}
-              >
-                {field.label}
-                <p className="text-xs text-red-700">
-                  {formik.touched[field.name] && formik.errors[field.name]}
-                </p>
-              </label>
-              <input
-                {...field}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values[field.name]}
-                className={`block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${
-                  formik.touched[field.name] && formik.errors[field.name]
-                    ? "border-red-700 border-2"
-                    : "border-grey border"
-                }`}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* SHIPPING INFO */}
-      <div className="pb-[53px]">
-        <p className="sub-title text-dark-salmon pb-3">Shipping Info</p>
-        <div className="flex flex-wrap w-full justify-between gap-y-6">
-          {[
-            {
-              label: "Address",
-              name: "address",
-              placeholder: "1137 Williams Avenue",
-              full: true,
-            },
-            { label: "ZIP Code", name: "zip", placeholder: "10001" },
-            { label: "City", name: "city", placeholder: "New York" },
-            { label: "Country", name: "country", placeholder: "United States" },
-          ].map((field) => (
-            <div
-              key={field.name}
-              className={field.full ? "w-full" : "w-[309px]"}
-            >
-              <label
-                className={`text-xs font-bold block mb-2 ${
-                  formik.touched[field.name] && formik.errors[field.name]
-                    ? "text-red-700"
-                    : "text-black"
-                }`}
-              >
-                {field.label}
-                <p className="text-xs text-red-700">
-                  {formik.touched[field.name] && formik.errors[field.name]}
-                </p>
-              </label>
-              <input
-                name={field.name}
-                type="text"
-                placeholder={field.placeholder}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values[field.name]}
-                className={`block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${
-                  formik.touched[field.name] && formik.errors[field.name]
-                    ? "border-red-700 border-2"
-                    : "border-grey border"
-                }`}
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* PAYMENT */}
-      <div className="pb-[53px] sm:w-full">
-        <p className="sub-title text-dark-salmon pb-3">Payment Details</p>
-        <div className="flex w-full h-[128px] mb-5 sm:flex-col">
-          <div className="flex-1">
-            <p
-              className={`text-xs font-bold ${
-                formik.touched.payment && formik.errors.payment
-                  ? "text-red-700"
-                  : "text-black"
-              }`}
-            >
-              Payment Method
-            </p>
-            <p className="mt-2 text-xs text-red-700">
-              {formik.touched.payment && formik.errors.payment}
-            </p>
-          </div>
-          <div className="flex-1">
-            <label className="text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon">
-              <input
-                name="payment"
-                value="eMoney"
-                type="radio"
-                onChange={formik.handleChange}
-              />{" "}
-              e-Money
-            </label>
-            <label className="text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon">
-              <input
-                name="payment"
-                value="cod"
-                type="radio"
-                onChange={formik.handleChange}
-              />{" "}
-              Cash on Delivery
-            </label>
-          </div>
-        </div>
-
-        {formik.values.payment === "eMoney" && (
-          <div className="flex flex-wrap sm:pt-8 w-full justify-between gap-y-6">
-            <div className="w-[309px]">
-              <label className="text-xs font-bold block mb-2">
-                e-Money Number
-              </label>
-              <input
-                className="block rounded-md border w-full h-[56px] border-grey text-black font-bold text-[14px] px-[24px]"
-                placeholder="238521993"
-                type="text"
-              />
-            </div>
-            <div className="w-[309px]">
-              <label className="text-xs font-bold block mb-2">
-                e-Money PIN
-              </label>
-              <input
-                className="block rounded-md border w-full h-[56px] border-grey text-black font-bold text-[14px] px-[24px]"
-                placeholder="6891"
-                type="text"
-              />
-            </div>
-          </div>
-        )}
-      </div>
-
-      <button
-        type="submit"
-        disabled={submitting}
-        className="bg-dark-salmon text-white py-3 px-6 rounded-md font-bold"
+    <>
+      <form
+        id="checkout-form"
+        onSubmit={(e) => {
+          e.preventDefault()
+          console.log("Form submit clicked")
+          formik.handleSubmit()
+        }}
       >
-        {submitting ? "Processing..." : "Confirm Order"}
-      </button>
-    </form>
+        {/* BILLING DETAILS */}
+        <div className="pb-[53px]">
+          <p className="sub-title text-dark-salmon pb-3">Billing Details</p>
+          <div className="flex flex-wrap w-full justify-between gap-y-6">
+            {[
+              {
+                label: "Name",
+                name: "name",
+                type: "text",
+                placeholder: "Your Name",
+              },
+              {
+                label: "Email Address",
+                name: "email",
+                type: "email",
+                placeholder: "Your Email",
+              },
+              {
+                label: "Phone Number",
+                name: "phone",
+                type: "text",
+                placeholder: "Your Phone Number",
+              },
+            ].map((field) => (
+              <div key={field.name} className="w-[309px]">
+                <label
+                  className={`text-xs font-bold block mb-2 ${
+                    formik.touched[field.name] && formik.errors[field.name]
+                      ? "text-red-700"
+                      : "text-black"
+                  }`}
+                >
+                  {field.label}
+                  <p className="text-xs text-red-700">
+                    {formik.touched[field.name] && formik.errors[field.name]}
+                  </p>
+                </label>
+                <input
+                  {...field}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values[field.name]}
+                  className={`block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${
+                    formik.touched[field.name] && formik.errors[field.name]
+                      ? "border-red-700 border-2"
+                      : "border-grey border"
+                  }`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* SHIPPING INFO */}
+        <div className="pb-[53px]">
+          <p className="sub-title text-dark-salmon pb-3">Shipping Info</p>
+          <div className="flex flex-wrap w-full justify-between gap-y-6">
+            {[
+              {
+                label: "Address",
+                name: "address",
+                placeholder: "1137 Williams Avenue",
+                full: true,
+              },
+              { label: "ZIP Code", name: "zip", placeholder: "10001" },
+              { label: "City", name: "city", placeholder: "New York" },
+              {
+                label: "Country",
+                name: "country",
+                placeholder: "United States",
+              },
+            ].map((field) => (
+              <div
+                key={field.name}
+                className={field.full ? "w-full" : "w-[309px]"}
+              >
+                <label
+                  className={`text-xs font-bold block mb-2 ${
+                    formik.touched[field.name] && formik.errors[field.name]
+                      ? "text-red-700"
+                      : "text-black"
+                  }`}
+                >
+                  {field.label}
+                  <p className="text-xs text-red-700">
+                    {formik.touched[field.name] && formik.errors[field.name]}
+                  </p>
+                </label>
+                <input
+                  name={field.name}
+                  type="text"
+                  placeholder={field.placeholder}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values[field.name]}
+                  className={`block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${
+                    formik.touched[field.name] && formik.errors[field.name]
+                      ? "border-red-700 border-2"
+                      : "border-grey border"
+                  }`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* PAYMENT */}
+        <div className="pb-[53px] sm:w-full">
+          <p className="sub-title text-dark-salmon pb-3">Payment Details</p>
+          <div className="flex w-full h-[128px] mb-5 sm:flex-col">
+            <div className="flex-1">
+              <p
+                className={`text-xs font-bold ${
+                  formik.touched.payment && formik.errors.payment
+                    ? "text-red-700"
+                    : "text-black"
+                }`}
+              >
+                Payment Method
+              </p>
+              <p className="mt-2 text-xs text-red-700">
+                {formik.touched.payment && formik.errors.payment}
+              </p>
+            </div>
+            <div className="flex-1">
+              <label className="text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon">
+                <input
+                  name="payment"
+                  value="eMoney"
+                  type="radio"
+                  onChange={formik.handleChange}
+                />{" "}
+                e-Money
+              </label>
+              <label className="text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon">
+                <input
+                  name="payment"
+                  value="cod"
+                  type="radio"
+                  onChange={formik.handleChange}
+                />{" "}
+                Cash on Delivery
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          disabled={submitting}
+          className="bg-dark-salmon text-white py-3 px-6 rounded-md font-bold"
+        >
+          {submitting ? "Processing..." : "Confirm Order"}
+        </button>
+      </form>
+
+      {/* ✅ Modal always rendered */}
+      <ThankYouModal showModal={showModal} modelState={handleModalClose} />
+    </>
   )
 }
