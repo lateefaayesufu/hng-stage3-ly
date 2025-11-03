@@ -11,24 +11,25 @@
     "format:fix": "prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
-    "autoprefixer": "10.4.14",
+    "next": "13.4.6",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "convex": "^1.28.0",
-    "eslint": "8.43.0",
-    "eslint-config-next": "13.4.6",
     "formik": "^2.4.2",
     "framer-motion": "^10.12.20",
-    "hamburger-react": "^2.5.0",
-    "next": "^16.0.1",
-    "postcss": "8.4.24",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
     "react-modal": "^3.16.1",
     "react-use": "^17.4.0",
     "resend": "^6.4.0",
     "tailwindcss": "3.3.2",
-    "yup": "^1.2.0"
+    "yup": "^1.2.0",
+    "autoprefixer": "10.4.14",
+    "postcss": "8.4.24",
+    "hamburger-react": "^2.5.0"
   },
   "devDependencies": {
     "prettier": "^2.8.8"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
