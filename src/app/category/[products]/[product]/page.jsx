@@ -5,8 +5,8 @@ import React, { useContext, useState } from "react"
 import { useParams } from "next/navigation"
 import { data } from "../data"
 import Image from "next/image"
-import ButtonOne from "@/components/Buttons/ButtonOne"
-import { CartContext } from "@/context/CartContext"
+import ButtonOne from "../../../../components/Buttons/ButtonOne"
+import { CartContext } from "../../../../context/CartContext"
 import { motion } from "framer-motion"
 
 export default function ProductPage() {

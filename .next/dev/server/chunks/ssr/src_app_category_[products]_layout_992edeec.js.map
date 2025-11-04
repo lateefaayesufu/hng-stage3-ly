@@ -2,5 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/HomePC/Desktop/tspmo/audiophile-ecomm/src/app/category/%5Bproducts%5D/layout.js"],"sourcesContent":["import AboutSection from \"@/components/AboutSection/AboutSection\"\r\nimport CategoryCards from \"@/components/CategoryCards/CategoryCards\"\r\nimport React from \"react\"\r\n\r\nexport default function ProductLayout({ children }) {\r\n  return <div>{children}</div>\r\n}\r\n"],"names":[],"mappings":";;;;;AAAA;AACA;AACA;;;;;AAEe,SAAS,cAAc,EAAE,QAAQ,EAAE;IAChD,qBAAO,8OAAC;kBAAK;;;;;;AACf","debugId":null}}]
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/HomePC/Desktop/hng-stage3-ly/src/app/category/%5Bproducts%5D/layout.js"],"sourcesContent":["import AboutSection from \"../../../components/AboutSection/AboutSection\"\r\nimport CategoryCards from \"../../../components/CategoryCards/CategoryCards\"\r\nimport React from \"react\"\r\n\r\nexport default function ProductLayout({ children }) {\r\n  return <div>{children}</div>\r\n}\r\n"],"names":[],"mappings":";;;;;AAAA;AACA;AACA;;;;;AAEe,SAAS,cAAc,EAAE,QAAQ,EAAE;IAChD,qBAAO,8OAAC;kBAAK;;;;;;AACf","debugId":null}}]
 }

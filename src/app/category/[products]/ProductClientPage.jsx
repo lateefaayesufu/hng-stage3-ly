@@ -1,8 +1,8 @@
 // app/category/[products]/ProductClientPage.jsx
 "use client"
 
-import { data } from "@/app/category/[products]/data"
-import ProductCatalog from "@/components/ProductCatalog/ProductCatalog"
+import { data } from "./data"
+import ProductCatalog from "../../../components/ProductCatalog/ProductCatalog"
 import { motion } from "framer-motion"
 
 const getData = (productsCategory) => {

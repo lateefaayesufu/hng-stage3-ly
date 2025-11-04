@@ -1,6 +1,5 @@
 {
-  "/api/sendConfirmation/route": "app/api/sendConfirmation/route.js",
   "/category/[products]/[product]/page": "app/category/[products]/[product]/page.js",
-  "/checkout/page": "app/checkout/page.js",
+  "/category/[products]/page": "app/category/[products]/page.js",
   "/page": "app/page.js"
 }

@@ -1,0 +1,3 @@
+module.exports=[1514,a=>{"use strict";var b=a.i(87924),c=a.i(22669);function d(){return(0,b.jsxs)("div",{className:"w-full lg:max-w-[1110px] md:max-w-[689px] sm:max-w-[327px] flex flex-row sm:flex-col justify-between m-auto flex-wrap sm:h-[683px]",children:[(0,b.jsx)(c.default,{image:"/shared/desktop/image-category-thumbnail-headphones.png",link:"/category/headphones",category:"Headphones"}),(0,b.jsx)(c.default,{image:"/shared/desktop/image-category-thumbnail-speakers.png",link:"/category/speakers",category:"Speakers"}),(0,b.jsx)(c.default,{image:"/shared/desktop/image-category-thumbnail-earphones.png",link:"/category/earphones",category:"Earphones"})]})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=src_components_CategoryCards_CategoryCards_tsx_cc80e456._.js.map

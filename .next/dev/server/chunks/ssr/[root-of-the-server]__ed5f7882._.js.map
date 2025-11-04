@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 25, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/HomePC/Desktop/tspmo/audiophile-ecomm/src/app/category/%5Bproducts%5D/page.jsx"],"sourcesContent":["// app/category/[products]/page.jsx\r\nimport ProductClientPage from \"./ProductClientPage\"\r\n\r\nexport default async function ProductsPage({ params }) {\r\n  const resolvedParams = await params // unwrap the Promise\r\n  return <ProductClientPage productsCategory={resolvedParams.products} />\r\n}\r\n"],"names":[],"mappings":"AAAA,mCAAmC;;;;;;AACnC;;;AAEe,eAAe,aAAa,EAAE,MAAM,EAAE;IACnD,MAAM,iBAAiB,MAAM,OAAO,qBAAqB;;IACzD,qBAAO,8OAAC,uKAAiB;QAAC,kBAAkB,eAAe,QAAQ;;;;;;AACrE","debugId":null}}]
-}
