@@ -85,7 +85,14 @@ export default function Form() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             orderId,
-            customer: { name: values.name, email: values.email },
+            customer: { 
+              name: values.name, 
+              email: values.email,
+              address: values.address,
+              city: values.city,
+              zip: values.zip,
+              country: values.country
+            },
             items: cart,
             total: orderData.grandTotal,
           }),

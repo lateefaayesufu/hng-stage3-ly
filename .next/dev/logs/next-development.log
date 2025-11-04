@@ -1,0 +1,110 @@
+[00:00:00.945] Server  LOG      ✓ Ready in 616ms
+[00:00:40.416] Server  LOG      ○ Compiling /checkout ...
+[00:00:43.069] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:43.503] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RootLayout params={Promise}>
+      <html lang="en" className="manrope_cc...">
+        <NoopHead>
+        <body className="bg-zinc ov...">
+          <ConvexProvider client={{address:"h...", ...}}>
+            <CartContextProvider>
+              <Header>
+                <div className="relative">
+                  <AnimatePresence>
+                  <header className="m-auto lg:...">
+                    <nav className="flex flex-...">
+                      <div>
+                      <LinkComponent>
+                      <div>
+                      <div>
+                        <motion.button whileHover={{scale:1.05, ...}} whileTap={{scale:0.95, ...}} ...>
+                          <button onClick={function onClick} disabled={true} className="disabled:o..." tabIndex={0} ...>
++                           <div
++                             className="w-[15px] h-[15px] block bg-dark-salmon absolute text-[10px] rounded-full text..."
++                           >
+-                           <svg
+-                             width="24"
+-                             height="20"
+-                             viewBox="0 0 24 20"
+-                             fill="none"
+-                             xmlns="http://www.w3.org/2000/svg"
+-                           >
+                            ...
+              ...
+
+[00:00:43.503] Browser WARN    Image with src "/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:05.626] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:06.014] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RootLayout params={Promise}>
+      <html lang="en" className="manrope_cc...">
+        <NoopHead>
+        <body className="bg-zinc ov...">
+          <ConvexProvider client={{address:"h...", ...}}>
+            <CartContextProvider>
+              <Header>
+                <div className="relative">
+                  <AnimatePresence>
+                  <header className="m-auto lg:...">
+                    <nav className="flex flex-...">
+                      <div>
+                      <LinkComponent>
+                      <div>
+                      <div>
+                        <motion.button whileHover={{scale:1.05, ...}} whileTap={{scale:0.95, ...}} ...>
+                          <button onClick={function onClick} disabled={false} className="disabled:o..." tabIndex={0} ...>
++                           <div
++                             className="w-[15px] h-[15px] block bg-dark-salmon absolute text-[10px] rounded-full text..."
++                           >
+-                           <svg
+-                             width="24"
+-                             height="20"
+-                             viewBox="0 0 24 20"
+-                             fill="none"
+-                             xmlns="http://www.w3.org/2000/svg"
+-                           >
+                            ...
+              ...
+
+[00:01:06.014] Browser WARN    Image with src "http://localhost:3000/home/desktop/pattern-circles-desktop.svg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:06.014] Browser WARN    Image with src "/home/desktop/image-hero.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:06.014] Browser WARN    Image with src "/home/mobile/image-header.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:06.014] Browser WARN    Image with src "/shared/desktop/image-category-thumbnail-headphones.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:06.014] Browser WARN    Image with src "/shared/desktop/image-category-thumbnail-speakers.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:06.014] Browser WARN    Image with src "/shared/desktop/image-category-thumbnail-earphones.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:06.014] Browser WARN    Image with src "/home/desktop/image-speaker-zx9.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:01:06.014] Browser WARN    Image with src "/shared/desktop/image-best-gear.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:08.144] Browser WARN    Image with src "/product-xx99-mark-two-headphones/desktop/image-product.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:08.144] Browser WARN    Image with src "/product-xx99-mark-one-headphones/desktop/image-product.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:08.144] Browser WARN    Image with src "/product-xx59-headphones/desktop/image-product.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:12.579] Browser WARN    Image with src "/product-xx99-mark-two-headphones/desktop/image-gallery-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:12.579] Browser WARN    Image with src "/product-xx99-mark-two-headphones/desktop/image-gallery-2.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:12.579] Browser WARN    Image with src "/product-xx99-mark-two-headphones/desktop/image-gallery-3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:12.579] Browser WARN    Image with src "/shared/desktop/image-xx99-mark-one-headphones.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:12.579] Browser WARN    Image with src "/shared/desktop/image-xx59-headphones.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:12.579] Browser WARN    Image with src "/shared/desktop/image-zx9-speaker.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:19.560] Browser WARN    React-Modal: Cannot register modal instance that's already open
+[00:01:19.560] Browser WARN    Image with src "/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
