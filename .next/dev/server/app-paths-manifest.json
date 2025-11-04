@@ -1,5 +1,0 @@
-{
-  "/category/[products]/[product]/page": "app/category/[products]/[product]/page.js",
-  "/category/[products]/page": "app/category/[products]/page.js",
-  "/page": "app/page.js"
-}

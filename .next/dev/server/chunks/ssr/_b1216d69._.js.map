@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/HomePC/Desktop/hng-stage3-ly/src/app/category/layout.tsx"],"sourcesContent":["import AboutSection from \"@/components/AboutSection/AboutSection\"\r\nimport CategoryCards from \"@/components/CategoryCards/CategoryCards\"\r\n\r\nexport default function CategoryLayout({ children }) {\r\n  return (\r\n    <div>\r\n      {children}\r\n      <CategoryCards />\r\n      <AboutSection />\r\n    </div>\r\n  )\r\n}\r\n"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;AAGe,SAAS,eAAe,EAAE,QAAQ,EAAE;IACjD,qBACE,8OAAC;;YACE;0BACD,8OAAC;;;;;0BACD,8OAAC;;;;;;;;;;;AAGP","debugId":null}},
-    {"offset": {"line": 47, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/HomePC/Desktop/hng-stage3-ly/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-rsc']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0],"debugId":null}}]
-}
