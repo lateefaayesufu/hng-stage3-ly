@@ -1,1 +1,9 @@
-{}
+{
+  "[project]/src/components/Modal/Modal.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/Modal/Modal.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/_3decdc0a._.js",
+      "static/chunks/src_components_Modal_Modal_tsx_9621bf09._.js"
+    ]
+  }
+}

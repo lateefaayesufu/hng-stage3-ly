@@ -9,7 +9,7 @@ The app includes:
 - **Landing & Product Pages** – Hero section, featured products, and product listing.
 - **Checkout Form** – Collects user details, shipping info, and payment method with validation.
 - **Order Management** – Orders stored in Convex backend; unique order IDs for tracking.
-- **Email Confirmation** – Sends order confirmation emails via Resend API.
+- **Email Confirmation** – Sends order confirmation emails via Nodemailer (SMTP).
 - **Responsive Design** – Mobile, tablet, and desktop layouts match Figma designs.
 - **Accessible HTML** – Semantic tags, alt text, focus states, and screen-reader friendly.
 
@@ -33,7 +33,7 @@ The app includes:
 
 **Email Confirmation**  
 - Sends transactional email with order summary, shipping info, and total amount.  
-- Uses Resend API for HTML-based responsive emails.
+- Uses Nodemailer (SMTP) for HTML-based responsive emails; the project includes an Ethereal dev fallback when SMTP is not configured.
 
 ✦ Data Validation & Error Handling
 
@@ -53,7 +53,7 @@ The app includes:
 
 - React / Next.js  
 - Convex (backend & database)  
-- Resend API (email notifications)  
+- Nodemailer (SMTP)  
 - Tailwind CSS for styling  
 - Framer Motion (animations)  
 - Formik & Yup (form handling and validation)  

@@ -1,45 +1,29 @@
-import { Resend } from "resend"
-import { NextResponse } from "next/server"
+import { sendMail } from "@/lib/email"
+import { NextRequest, NextResponse } from "next/server"
 
-if (!process.env.RESEND_API_KEY) {
-  throw new Error('RESEND_API_KEY environment variable is not set. Please add it to your .env.local file.');
-}
-
-const resend = new Resend(process.env.RESEND_API_KEY)
-
-interface EmailRequest {
-  to: string;
-  subject: string;
-  html: string;
-}
-
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
-    const { to, subject, html }: EmailRequest = await req.json()
+    const { to, subject, html } = await req.json()
+    const result = await sendMail({ to, subject, html })
 
-    if (!to || !subject || !html) {
+    if (result.success) {
       return NextResponse.json(
-        { success: false, error: "Missing required fields" },
-        { status: 400 }
-      );
+        { message: "Email sent successfully", previewUrl: result.previewUrl },
+        { status: 200 },
+      )
+    } else {
+      return NextResponse.json(
+        { error: "Failed to send email", details: result.error },
+        { status: 500 },
+      )
     }
-
-    const data = await resend.emails.send({
-      from: "Audiophile <onboarding@resend.dev>",
-      to,
-      subject,
-      html,
-    })
-
-    return NextResponse.json({ success: true, data })
   } catch (error) {
-    console.error('Error sending email:', error)
+    console.error("API Error:", error)
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred"
     return NextResponse.json(
-      { 
-        success: false, 
-        error: error instanceof Error ? error.message : 'Failed to send email'
-      },
-      { status: 500 }
+      { error: "Internal Server Error", details: errorMessage },
+      { status: 500 },
     )
   }
 }

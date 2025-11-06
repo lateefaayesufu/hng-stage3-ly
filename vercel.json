@@ -7,8 +7,12 @@
     }
   ],
   "env": {
-    "RESEND_API_KEY": "@resend_api_key",
-    "NEXT_PUBLIC_RESEND_API_KEY": "@resend_api_key"
+    "SMTP_HOST": "@smtp_host",
+    "SMTP_PORT": "@smtp_port",
+    "SMTP_USER": "@smtp_user",
+    "SMTP_PASS": "@smtp_pass",
+    "FROM_EMAIL": "@from_email",
+    "NEXT_PUBLIC_SITE_ORIGIN": "@site_origin"
   },
   "routes": [
     {

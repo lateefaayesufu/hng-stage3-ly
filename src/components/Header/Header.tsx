@@ -1,23 +1,30 @@
 "use client"
 import { useState, useEffect, useContext } from "react"
 import Link from "next/link"
-import Modal from "../Modal/Modal"
+import dynamic from "next/dynamic"
 import { usePathname } from "next/navigation"
 import { Squash as Hamburger } from "hamburger-react"
 import { motion, AnimatePresence } from "framer-motion"
 import Dropdown from "../Dropdown/Dropdown"
 import { CartContext } from "../../context/CartContext"
 
+const DynamicModal = dynamic(() => import("../Modal/Modal"), { ssr: false })
+
 export default function Header() {
   const pathName = usePathname()
   const [showModal, setShowModal] = useState(false)
   const [dropdown, setDropdown] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
 
   const context = useContext(CartContext)
   if (!context) {
     throw new Error('Header must be used within a CartContextProvider')
   }
   const { cart } = context
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   // Cart modal
   const modalShow = () => {
@@ -49,9 +56,9 @@ export default function Header() {
           <Dropdown dropDownOpen={dropdown} handleClose={dropDownClose} />
         )}
       </AnimatePresence>
-      {showModal ? (
-        <Modal showModal={showModal} modelState={modalShow} />
-      ) : null}
+      {isMounted && showModal && (
+        <DynamicModal showModal={showModal} modelState={modalShow} />
+      )}
       <header
         className={`m-auto lg:max-w-[1110px] md:max-w-[689px] sm:max-w-[327px] border-b z-10 border-white/20 lg:h-[96px] md:h-[89px] sm:h-[89px] absolute left-0 right-0`}
       >
@@ -127,7 +134,7 @@ export default function Header() {
               disabled={pathName == "/checkout"}
               className="disabled:opacity-30 relative"
             >
-              {cart.length != 0 && (
+              {isMounted && cart.length > 0 && (
                 <div className="w-[15px] h-[15px] block bg-dark-salmon absolute text-[10px] rounded-full text-white font-bold bottom-4 right-[-4px]">
                   {cart.length}
                 </div>

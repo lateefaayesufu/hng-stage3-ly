@@ -10,3 +10,4 @@ coverage/
 .vscode/
 .env.local
 .next/
+.env.example

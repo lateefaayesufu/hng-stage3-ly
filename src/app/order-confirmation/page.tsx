@@ -12,11 +12,39 @@ export default function OrderConfirmation() {
   const [latestOrder, setLatestOrder] = useState<Order | null>(null)
   const orders = useQuery(api.orders.getAllOrders) || []
 
+  // Prefer lastOrder stored in localStorage (set by checkout flow). Fallback to Convex data.
   useEffect(() => {
+    try {
+      const raw = localStorage.getItem('lastOrder')
+      if (raw) {
+        const parsed = JSON.parse(raw)
+        // Convert to Order-like shape if possible
+        const localOrder: any = {
+          _id: parsed.orderId,
+          customerName: parsed.customer?.name || parsed.customerName,
+          customerEmail: parsed.customer?.email || parsed.customerEmail,
+          items: parsed.items?.map((it: any) => ({
+            productId: it.productId || it.name,
+            name: it.name,
+            price: it.price,
+            quantity: it.quantity,
+            image: it.image || '',
+          })) || [],
+          grandTotal: parsed.total || parsed.grandTotal || 0,
+        }
+        setLatestOrder(localOrder as Order)
+        // remove stored order after reading
+        localStorage.removeItem('lastOrder')
+        return
+      }
+    } catch (e) {
+      console.warn('Failed to read lastOrder from localStorage', e)
+    }
+
     if (orders.length > 0) {
       // Sort by creation time if needed (optional safety)
       const sorted = [...orders].sort(
-        (a, b) => b._creationTime - a._creationTime,
+        (a, b) => (b._creationTime as any) - (a._creationTime as any),
       )
       setLatestOrder(sorted[0])
     }

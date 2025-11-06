@@ -398,17 +398,294 @@ function Form() {
         }
     });
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-        onSubmit: formik.handleSubmit,
+        onSubmit: (e)=>{
+            e.preventDefault();
+            console.log("Form submit clicked");
+            formik.handleSubmit();
+        },
         className: "bg-white rounded-lg p-6 md:p-8 lg:p-12 w-full lg:w-2/3",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-            className: "text-3xl font-bold uppercase mb-8",
-            children: "Checkout"
-        }, void 0, false, {
-            fileName: "[project]/src/components/Form/Form.tsx",
-            lineNumber: 135,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "pb-[53px]",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "sub-title text-dark-salmon pb-3",
+                        children: "Billing Details"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Form/Form.tsx",
+                        lineNumber: 141,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-wrap w-full justify-between gap-y-6",
+                        children: [
+                            {
+                                label: "Name",
+                                name: "name",
+                                type: "text",
+                                placeholder: "Your Name"
+                            },
+                            {
+                                label: "Email Address",
+                                name: "email",
+                                type: "email",
+                                placeholder: "Your Email"
+                            },
+                            {
+                                label: "Phone Number",
+                                name: "phone",
+                                type: "text",
+                                placeholder: "Your Phone Number"
+                            }
+                        ].map((field)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "w-[309px]",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: `text-xs font-bold block mb-2 ${formik.touched[field.name] && formik.errors[field.name] ? "text-red-700" : "text-black"}`,
+                                        children: [
+                                            field.label,
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-red-700",
+                                                children: formik.touched[field.name] && formik.errors[field.name]
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Form/Form.tsx",
+                                                lineNumber: 172,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/Form/Form.tsx",
+                                        lineNumber: 164,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        ...field,
+                                        onChange: formik.handleChange,
+                                        onBlur: formik.handleBlur,
+                                        value: formik.values[field.name],
+                                        className: `block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${formik.touched[field.name] && formik.errors[field.name] ? "border-red-700 border-2" : "border-grey border"}`
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Form/Form.tsx",
+                                        lineNumber: 176,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, field.name, true, {
+                                fileName: "[project]/src/components/Form/Form.tsx",
+                                lineNumber: 163,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Form/Form.tsx",
+                        lineNumber: 142,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/Form/Form.tsx",
+                lineNumber: 140,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "pb-[53px]",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "sub-title text-dark-salmon pb-3",
+                        children: "Shipping Info"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Form/Form.tsx",
+                        lineNumber: 194,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-wrap w-full justify-between gap-y-6",
+                        children: [
+                            {
+                                label: "Address",
+                                name: "address",
+                                placeholder: "1137 Williams Avenue",
+                                full: true
+                            },
+                            {
+                                label: "ZIP Code",
+                                name: "zip",
+                                placeholder: "10001"
+                            },
+                            {
+                                label: "City",
+                                name: "city",
+                                placeholder: "New York"
+                            },
+                            {
+                                label: "Country",
+                                name: "country",
+                                placeholder: "United States"
+                            }
+                        ].map((field)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: field.full ? "w-full" : "w-[309px]",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: `text-xs font-bold block mb-2 ${formik.touched[field.name] && formik.errors[field.name] ? "text-red-700" : "text-black"}`,
+                                        children: [
+                                            field.label,
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs text-red-700",
+                                                children: formik.touched[field.name] && formik.errors[field.name]
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Form/Form.tsx",
+                                                lineNumber: 223,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/Form/Form.tsx",
+                                        lineNumber: 215,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                        name: field.name,
+                                        type: "text",
+                                        placeholder: field.placeholder,
+                                        onChange: formik.handleChange,
+                                        onBlur: formik.handleBlur,
+                                        value: formik.values[field.name],
+                                        className: `block rounded-md w-full h-[56px] text-black font-bold text-[14px] px-[24px] placeholder:text-black/40 ${formik.touched[field.name] && formik.errors[field.name] ? "border-red-700 border-2" : "border-grey border"}`
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Form/Form.tsx",
+                                        lineNumber: 227,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, field.name, true, {
+                                fileName: "[project]/src/components/Form/Form.tsx",
+                                lineNumber: 211,
+                                columnNumber: 13
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Form/Form.tsx",
+                        lineNumber: 195,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/Form/Form.tsx",
+                lineNumber: 193,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "pb-[53px] sm:w-full",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "sub-title text-dark-salmon pb-3",
+                        children: "Payment Details"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/Form/Form.tsx",
+                        lineNumber: 247,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex w-full h-[128px] mb-5 sm:flex-col",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex-1",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: `text-xs font-bold ${formik.touched.payment && formik.errors.payment ? "text-red-700" : "text-black"}`,
+                                        children: "Payment Method"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Form/Form.tsx",
+                                        lineNumber: 250,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "mt-2 text-xs text-red-700",
+                                        children: formik.touched.payment && formik.errors.payment
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Form/Form.tsx",
+                                        lineNumber: 259,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/Form/Form.tsx",
+                                lineNumber: 249,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "flex-1",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: "text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                name: "payment",
+                                                value: "eMoney",
+                                                type: "radio",
+                                                onChange: formik.handleChange
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Form/Form.tsx",
+                                                lineNumber: 265,
+                                                columnNumber: 15
+                                            }, this),
+                                            " ",
+                                            "e-Money"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/Form/Form.tsx",
+                                        lineNumber: 264,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: "text-xs font-bold block mb-2 rounded-md border w-full h-[56px] border-grey bg-white items-center px-4 gap-x-3 hover:border-dark-salmon",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                name: "payment",
+                                                value: "cod",
+                                                type: "radio",
+                                                onChange: formik.handleChange
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Form/Form.tsx",
+                                                lineNumber: 274,
+                                                columnNumber: 15
+                                            }, this),
+                                            " ",
+                                            "Cash on Delivery"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/src/components/Form/Form.tsx",
+                                        lineNumber: 273,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/Form/Form.tsx",
+                                lineNumber: 263,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/Form/Form.tsx",
+                        lineNumber: 248,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/Form/Form.tsx",
+                lineNumber: 246,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                type: "submit",
+                disabled: submitting,
+                className: "bg-dark-salmon text-white py-3 px-6 rounded-md font-bold",
+                children: submitting ? "Processing..." : "Confirm Order"
+            }, void 0, false, {
+                fileName: "[project]/src/components/Form/Form.tsx",
+                lineNumber: 286,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/src/components/Form/Form.tsx",
         lineNumber: 131,
         columnNumber: 5

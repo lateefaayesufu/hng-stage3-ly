@@ -1,180 +1,206 @@
 "use client"
 
-import Modal from "react-modal"
-import Link from "next/link"
-import { CartContext } from "@/context/CartContext"
-import { useContext, useState } from "react"
+import React, { useState, useEffect, useContext } from "react"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { CartContext } from "@/context/CartContext"
 
 interface ThankYouModalProps {
-  showModal: boolean;
-  modelState: () => void;
+  showModal: boolean
+  modelState: () => void
+  previewUrl?: string | null
+  orderId?: string
 }
 
-const ThankYouModal = ({ showModal, modelState }: ThankYouModalProps) => {
+export default function ThankYouModal({
+  showModal,
+  modelState,
+  previewUrl,
+  orderId,
+}: ThankYouModalProps) {
   const [seeMore, setSeeMore] = useState(false)
-  const context = useContext(CartContext)
-  if (!context) {
-    throw new Error('ThankYouModal must be used within a CartContextProvider')
-  }
-  const { cart, totalPriceCalc } = context
+  const router = useRouter()
 
+  const context = useContext(CartContext)
+  if (!context)
+    throw new Error("ThankYouModal must be used within a CartContextProvider")
+
+  const { cart, totalPriceCalc, clearCart } = context
   const cartTotal = totalPriceCalc()
 
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "unset"
+    }
+    return () => {
+      document.body.style.overflow = "unset"
+    }
+  }, [showModal])
+
+  const handleClose = () => {
+    modelState()
+    clearCart() // ✅ clear cart after order confirmation
+    if (orderId) {
+      router.push(`/order-confirmation?orderId=${orderId}`)
+    } else {
+      router.push("/")
+    }
+  }
+
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      handleClose()
+    }
+  }
+
+  if (!showModal) return null
+
   return (
-    <Modal
-      ariaHideApp={false}
-      isOpen={showModal}
-      onRequestClose={modelState}
-      style={{
-        overlay: {
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: "rgba(0,0,0,0.75)",
-          zIndex: 20,
-        },
-        content: {
-          position: "absolute",
-          maxHeight: "713px",
-          height: "fit-content",
-          width: "clamp(5%, 540px, 90%)",
-          top: "110px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          border: "1px solid #ccc",
-          background: "white",
-          overflow: "auto",
-          borderRadius: "8px",
-          outline: "none",
-          padding: "24px",
-        },
-      }}
-      contentLabel="Thank You Modal"
+    <div
+      onClick={handleOverlayClick}
+      className="fixed inset-0 bg-black bg-opacity-60 z-[9999] flex items-center justify-center p-5"
     >
-      <div className="flex flex-col gap-y-6">
-        <div>
-          <svg
-            width="64"
-            height="64"
-            viewBox="0 0 64 64"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="32" cy="32" r="32" fill="#D87D4A" />
-            <path
-              d="M20.7539 33.3328L27.5054 40.0843L43.3085 24.2812"
-              stroke="white"
-              strokeWidth="4"
-            />
-          </svg>
-        </div>
-
-        <div>
-          <h3>
-            Thank you
-            <br />
-            for your order
-          </h3>
-          <p className="text-black/50 pt-4">
-            You will receive an email confirmation shortly.
-          </p>
-        </div>
-
-        {cart.length > 0 && (
-          <div className="w-full bg-grey rounded-md flex flex-row justify-between sm:flex-col">
-            <div className="flex flex-col p-[24px] w-[248px] sm:w-full">
-              <div className="flex flex-col gap-y-4 mb-4">
-                {!seeMore ? (
-                  <div className="flex justify-between w-full">
-                    <div className="w-[50px] h-[50px] relative">
-                      <Image
-                        src={cart[0].image}
-                        width={40}
-                        height={40}
-                        alt={cart[0].name}
-                        className="object-cover m-auto pt-[5px]"
-                      />
-                    </div>
-                    <div className="flex-1 pl-2">
-                      <p className="text-[15px] text-black font-bold uppercase">
-                        {cart[0].name.split(" ")[0]}
-                      </p>
-                      <p className="text-[14px] text-black/50 font-bold uppercase">
-                        ${cart[0].price.toLocaleString()}
-                      </p>
-                    </div>
-                    <div className="font-bold text-black/50 text-[15px]">
-                      x{cart[0].quantity}
-                    </div>
-                  </div>
-                ) : (
-                  cart.map((item) => (
-                    <div key={item.id} className="flex justify-between w-full">
-                      <div className="w-[50px] h-[50px] relative">
-                        <Image
-                          src={item.image}
-                          width={40}
-                          height={40}
-                          alt={item.name}
-                          className="object-cover m-auto pt-[5px]"
-                        />
-                      </div>
-                      <div className="flex-1 pl-2">
-                        <p className="text-[15px] text-black font-bold uppercase">
-                          {item.name.split(" ")[0]}
-                        </p>
-                        <p className="text-[14px] text-black/50 font-bold uppercase">
-                          ${item.price.toLocaleString()}
-                        </p>
-                      </div>
-                      <div className="font-bold text-black/50 text-[15px]">
-                        x{item.quantity}
-                      </div>
-                    </div>
-                  ))
-                )}
+      <div className="w-full max-w-[540px] animate-[fadeIn_0.3s_ease-out]">
+        <div className="flex flex-col md:flex-row w-full rounded-lg overflow-hidden shadow-2xl max-h-[90vh]">
+          {/* LEFT: White side */}
+          <div className="flex flex-col justify-between bg-white p-8 md:p-10 flex-1 min-h-[300px]">
+            <div>
+              <div className="w-16 h-16 bg-[#D87D4A] rounded-full flex items-center justify-center mb-6">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.7539 33.3328L27.5054 40.0843L43.3085 24.2812"
+                    stroke="white"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </div>
-              <div className="border-t border-gray w-full">
-                {cart.length > 1 && (
-                  <button
-                    className="block py-2 w-fit m-auto font-bold text-black/50 text-[12px] hover:text-black/30"
-                    onClick={() => setSeeMore(!seeMore)}
-                  >
-                    {!seeMore
-                      ? `and ${cart.length - 1} other item(s)`
-                      : "View less"}
-                  </button>
-                )}
-              </div>
+
+              <h3 className="text-[28px] md:text-[32px] font-bold leading-tight tracking-wider uppercase">
+                Thank you
+                <br />
+                for your order
+              </h3>
+              <p className="text-[15px] text-black/50 mt-6 leading-[25px]">
+                You will receive an email confirmation shortly.
+              </p>
             </div>
 
-            <div className="w-[198px] sm:w-full sm:h-[100px] bg-black rounded-r-md sm:rounded-b-md sm:rounded-t-none flex flex-col sm:justify-center justify-end items-center sm:items-start sm:pl-[24px] gap-y-1">
-              <p className="text-[15px] text-white/50 font-medium uppercase w-[70%]">
-                Grand Total
-              </p>
-              <p className="text-[18px] text-white font-bold uppercase w-[70%] pb-[25%] sm:pb-0">
-                ${cartTotal.toLocaleString()}
-              </p>
+            <div className="mt-8">
+              <button
+                onClick={handleClose}
+                className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white font-bold text-[13px] tracking-[1px] uppercase w-full h-12 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                Back to Home
+              </button>
+
+              {previewUrl && (
+                <a
+                  href={previewUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-sm text-center text-black/60 underline mt-4 hover:text-black/80"
+                >
+                  Preview Sent Email
+                </a>
+              )}
             </div>
           </div>
-        )}
 
-        <Link href="/" onClick={modelState}>
-          <motion.button
-            className="mt-4 bg-dark-salmon text-white font-bold uppercase w-full h-[48px] text-[13px] tracking-[1px] hover:bg-salmon"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Back to home
-          </motion.button>
-        </Link>
+          {/* RIGHT: Dark side with order summary */}
+          <div className="bg-[#000000] text-white flex flex-col p-6 md:p-8 md:w-[280px] min-h-[200px] md:min-h-[300px]">
+            <div className="flex-1 overflow-y-auto">
+              {cart.length > 0 && (
+                <>
+                  {!seeMore ? (
+                    <div className="flex items-center gap-4 pb-3">
+                      <div className="w-[50px] h-[50px] relative flex-shrink-0 rounded-lg overflow-hidden bg-[#F1F1F1]">
+                        <Image
+                          src={cart[0].image}
+                          width={50}
+                          height={50}
+                          alt={cart[0].name}
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-[15px] font-bold uppercase truncate">
+                          {cart[0].name}
+                        </div>
+                        <div className="text-[14px] text-white/50 font-bold">
+                          ${cart[0].price.toLocaleString()}
+                        </div>
+                      </div>
+                      <div className="text-[15px] text-white/50 font-bold">
+                        x{cart[0].quantity}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-4 pb-3 max-h-[180px] overflow-y-auto">
+                      {cart.map((item) => (
+                        <div key={item.id} className="flex items-center gap-4">
+                          <div className="w-[50px] h-[50px] relative flex-shrink-0 rounded-lg overflow-hidden bg-[#F1F1F1]">
+                            <Image
+                              src={item.image}
+                              width={50}
+                              height={50}
+                              alt={item.name}
+                              className="object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-[15px] font-bold uppercase truncate">
+                              {item.name}
+                            </div>
+                            <div className="text-[14px] text-white/50 font-bold">
+                              ${item.price.toLocaleString()}
+                            </div>
+                          </div>
+                          <div className="text-[15px] text-white/50 font-bold">
+                            x{item.quantity}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {cart.length > 1 && (
+                    <>
+                      <div className="border-t border-white/10 my-3"></div>
+                      <button
+                        onClick={() => setSeeMore(!seeMore)}
+                        className="text-[12px] text-white/50 font-bold w-full text-center hover:text-white/70 transition-colors"
+                      >
+                        {!seeMore
+                          ? `and ${cart.length - 1} other item(s)`
+                          : "View less"}
+                      </button>
+                    </>
+                  )}
+                </>
+              )}
+            </div>
+
+            <div className="mt-auto pt-4">
+              <div className="text-[15px] text-white/50 uppercase mb-2">
+                Grand Total
+              </div>
+              <div className="text-[18px] font-bold">
+                ${cartTotal.toLocaleString()}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </Modal>
+    </div>
   )
 }
-
-export default ThankYouModal
